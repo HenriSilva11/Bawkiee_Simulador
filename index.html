@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAWKIEE | Mini Brownies Artesanais — Catálogo & Orçamento</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            choco: {
+              dark: '#2C1A12',
+              warm: '#4A2E22',
+              medium: '#6B4433',
+            },
+            cream: {
+              light: '#FAF5F0',
+              soft: '#F3EAE0',
+              border: '#E6D8C8',
+            },
+            caramel: {
+              DEFAULT: '#C88A55',
+              light: '#DFAA78',
+              dark: '#A66D3C',
+            },
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-cream-light text-choco-dark font-sans antialiased selection:bg-caramel selection:text-white">
+
+  <!-- Toast / Notificação Flutuante (Substitui alert) -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-sm w-[calc(100%-2.5rem)] sm:w-auto"></div>
+
+  <!-- Navegação Superior -->
+  <header class="sticky top-0 z-40 bg-cream-light/90 backdrop-blur-md border-b border-cream-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col group">
+        <span class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.18em] text-choco-dark group-hover:text-caramel-dark transition-colors">
+          BAWKIEE
+        </span>
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-choco-warm/80 font-medium">
+          Confeitaria Artesanal
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-choco-warm">
+        <a href="#sabores" class="hover:text-caramel-dark transition-colors">Sabores & Preços</a>
+        <a href="#simulador" class="hover:text-caramel-dark transition-colors">Simular Orçamento</a>
+        <a href="#condicoes" class="hover:text-caramel-dark transition-colors">Embalagem & Entrega</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="#simulador" class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-choco-dark text-cream-light hover:bg-choco-warm transition-all shadow-sm">
+          Simular Pedido
+        </a>
+        <a href="https://instagram.com/bawkiee" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-caramel text-white hover:bg-caramel-dark transition-all shadow-sm">
+          <!-- Ícone Instagram SVG -->
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>@bawkiee</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-cream-soft/70 via-cream-light to-cream-light pt-12 pb-16 sm:pt-20 sm:pb-24 border-b border-cream-border/70">
+    <!-- Elementos decorativos sutis -->
+    <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-caramel/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-32 -left-24 w-72 h-72 rounded-full bg-choco-warm/5 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Texto Principal -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-cream-border shadow-sm mb-6">
+            <span class="w-2 h-2 rounded-full bg-caramel"></span>
+            <span class="text-xs font-semibold tracking-wider uppercase text-choco-warm">
+              Confeitaria Artesanal • Mini Brownies
+            </span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-choco-dark leading-[1.12] mb-6">
+            Pequenos pedaços de <span class="italic text-caramel-dark">felicidade</span> feitos à mão.
+          </h1>
+
+          <p class="text-base sm:text-lg text-choco-warm/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
+            Massa úmida, casquinha craquelada e recheios generosos. Nossos <strong>Mini Brownies Artesanais</strong> são produzidos sob encomenda para encantar convidados em festas e tornar lembrancinhas inesquecíveis.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#simulador"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-choco-dark text-cream-light font-semibold text-sm sm:text-base hover:bg-choco-warm transition-all shadow-lg shadow-choco-dark/15">
+              <span>Ver Cardápio e Simular Pedido</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+
+            <a href="https://instagram.com/bawkiee" target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-white text-choco-dark border border-cream-border font-semibold text-sm sm:text-base hover:border-caramel hover:text-caramel-dark transition-all shadow-sm">
+              <svg class="w-5 h-5 text-caramel-dark fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>Encomendar no @bawkiee</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cartão Visual Ilustrativo Gourmet -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-cream-border shadow-xl shadow-choco-dark/5 relative">
+            <div class="flex items-center justify-between mb-5">
+              <span class="text-xs font-bold uppercase tracking-widest text-caramel-dark">Guia de Tamanhos</span>
+              <span class="px-3 py-1 rounded-full bg-cream-soft text-choco-dark text-xs font-semibold">100% Artesanal</span>
+            </div>
+
+            <!-- Ilustração SVG Gourmet de Brownie em Camadas -->
+            <div class="w-full h-44 rounded-2xl bg-gradient-to-br from-choco-dark via-choco-warm to-[#5E3A2A] flex items-center justify-center p-6 mb-6 relative overflow-hidden">
+              <div class="absolute inset-0 opacity-15" style="background-image: radial-gradient(#FAF5F0 1px, transparent 1px); background-size: 16px 16px;"></div>
+              <svg class="w-40 h-32 drop-shadow-2xl" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustração Mini Brownie Artesanal">
+                <!-- Prato / Base -->
+                <ellipse cx="100" cy="128" rx="82" ry="14" fill="#FAF5F0" fill-opacity="0.2"/>
+                <ellipse cx="100" cy="125" rx="74" ry="11" fill="#FAF5F0" fill-opacity="0.9"/>
+                <!-- Cubo Brownie Base -->
+                <path d="M48 64L100 42L152 64V108L100 130L48 108V64Z" fill="#3B2217"/>
+                <!-- Lado Esquerdo -->
+                <path d="M48 64L100 86V130L48 108V64Z" fill="#2C1A12"/>
+                <!-- Lado Direito -->
+                <path d="M152 64L100 86V130L152 108V64Z" fill="#4A2E22"/>
+                <!-- Camada de Recheio Cremoso -->
+                <path d="M48 84L100 106L152 84V93L100 115L48 93V84Z" fill="#DFAA78"/>
+                <!-- Topo Craquelado -->
+                <path d="M48 64L100 42L152 64L100 86L48 64Z" fill="#5D3A29"/>
+                <!-- Cobertura Dourada / Calda -->
+                <path d="M68 62C82 54 115 53 132 63C122 72 86 76 68 62Z" fill="#C88A55"/>
+                <!-- Detalhes de brilho -->
+                <circle cx="88" cy="60" r="2.5" fill="#FAF5F0" fill-opacity="0.7"/>
+                <circle cx="114" cy="63" r="2" fill="#FAF5F0" fill-opacity="0.6"/>
+              </svg>
+            </div>
+
+            <!-- Comparativo Rápido dos 2 Tamanhos -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-2xl bg-cream-light border border-cream-border">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-serif font-bold text-lg text-choco-dark">4x4 cm</span>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-caramel/20 text-caramel-dark">Festas</span>
+                </div>
+                <p class="text-xs text-choco-warm/80 mb-2">Ideal para mesas de doces e eventos.</p>
+                <p class="text-xs font-bold text-choco-dark">Pedido mín.: <span class="text-caramel-dark">50 unid.</span></p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-cream-light border border-cream-border">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-serif font-bold text-lg text-choco-dark">5x5 cm</span>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-choco-dark text-cream-light">Lembranças</span>
+                </div>
+                <p class="text-xs text-choco-warm/80 mb-2">Ideal para mimos e lembrancinhas.</p>
+                <p class="text-xs font-bold text-choco-dark">Pedido mín.: <span class="text-caramel-dark">25 unid.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 2: Catálogo de Sabores & Tabela de Preços -->
+  <section id="sabores" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      <span class="text-xs font-bold uppercase tracking-[0.22em] text-caramel-dark block mb-3">
+        Cardápio Oficial
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-choco-dark mb-4">
+        Sabores & Tabela de Preços
+      </h2>
+      <p class="text-sm sm:text-base text-choco-warm/85">
+        Valores por unidade de acordo com o tamanho escolhido. Todos os sabores acompanham embalagem padrão individual inclusa.
+      </p>
+    </div>
+
+    <!-- Banner Informativo dos Tamanhos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+      <div class="bg-white rounded-2xl p-5 border border-cream-border flex items-center gap-4 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-cream-soft flex items-center justify-center shrink-0 font-serif font-bold text-choco-dark text-sm border border-cream-border">
+          4x4
+        </div>
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <h3 class="font-bold text-choco-dark text-base">Tamanho 4x4 cm</h3>
+            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-caramel/15 text-caramel-dark">Ideal para festas</span>
+          </div>
+          <p class="text-xs sm:text-sm text-choco-warm/80 mt-0.5">
+            Pedido mínimo de <strong>50 unidades</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 border border-cream-border flex items-center gap-4 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-choco-dark flex items-center justify-center shrink-0 font-serif font-bold text-cream-light text-sm">
+          5x5
+        </div>
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <h3 class="font-bold text-choco-dark text-base">Tamanho 5x5 cm</h3>
+            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-choco-dark/10 text-choco-dark">Ideal para lembrancinhas</span>
+          </div>
+          <p class="text-xs sm:text-sm text-choco-warm/80 mt-0.5">
+            Pedido mínimo de <strong>25 unidades</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid dos 4 Sabores -->
+    <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Renderizado dinamicamente via JS para manter sincronia total com o simulador -->
+    </div>
+  </section>
+
+  <!-- Seção 3: Simulador Interativo de Orçamento -->
+  <section id="simulador" class="py-16 sm:py-24 bg-cream-soft/60 border-y border-cream-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-[0.22em] text-caramel-dark block mb-3">
+          Monte seu Pedido
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-choco-dark mb-4">
+          Simulador de Orçamento
+        </h2>
+        <p class="text-sm sm:text-base text-choco-warm/85">
+          Escolha o tamanho, adicione as quantidades de cada sabor e visualize na hora o valor total, o sinal de 50% e a validação do pedido mínimo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Coluna Esquerda: Seleção de Itens e Personalização -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Seletor de Tamanho Ativo (Tabs) + Aviso de Múltiplos Tamanhos -->
+          <div class="bg-white rounded-3xl p-6 sm:p-7 border border-cream-border shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-cream-border">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-choco-dark">1. Escolha o Tamanho</h3>
+                <p class="text-xs text-choco-warm/80 mt-0.5">Você pode alternar as abas para adicionar ambos os tamanhos ao mesmo orçamento.</p>
+              </div>
+
+              <!-- Tabs 4x4 vs 5x5 -->
+              <div class="inline-flex p-1.5 rounded-2xl bg-cream-light border border-cream-border self-start sm:self-auto" role="tablist">
+                <button type="button" id="tab-4x4" onclick="switchActiveSize('4x4')"
+                        class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-choco-dark text-cream-light shadow-sm">
+                  4x4 cm <span class="opacity-80 font-normal">(Mín. 50)</span>
+                </button>
+                <button type="button" id="tab-5x5" onclick="switchActiveSize('5x5')"
+                        class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-choco-warm hover:text-choco-dark">
+                  5x5 cm <span class="opacity-80 font-normal">(Mín. 25)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Lista de Sabores para Quantidade -->
+            <div id="simulator-flavors-list" class="divide-y divide-cream-border/70 mt-2">
+              <!-- Itens gerados via JS -->
+            </div>
+
+            <!-- Botões Rápidos de Preenchimento -->
+            <div class="mt-5 pt-4 border-t border-cream-border/70 flex flex-wrap items-center justify-between gap-3">
+              <span class="text-xs text-choco-warm/75">Atalhos para atingir o pedido mínimo rápido:</span>
+              <div class="flex flex-wrap gap-2">
+                <button type="button" onclick="fillMinimumUniform()"
+                        class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-cream-soft text-choco-dark hover:bg-caramel/20 transition-colors">
+                  Completar mínimo deste tamanho
+                </button>
+                <button type="button" onclick="resetOrder()"
+                        class="px-3.5 py-2 rounded-xl text-xs font-semibold text-choco-warm/80 hover:text-red-700 hover:bg-red-50 transition-colors">
+                  Limpar tudo
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloco 2: Embalagem e Personalização -->
+          <div class="bg-white rounded-3xl p-6 sm:p-7 border border-cream-border shadow-sm">
+            <h3 class="font-serif text-xl font-bold text-choco-dark mb-1">2. Embalagem & Personalização</h3>
+            <p class="text-xs text-choco-warm/80 mb-5">Selecione o acabamento desejado para todos os mini brownies do pedido.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Opção Padrão -->
+              <label class="cursor-pointer relative block">
+                <input type="radio" name="packaging" value="padrao" checked onchange="setPackaging('padrao')" class="peer sr-only" />
+                <div class="h-full p-5 rounded-2xl border-2 border-cream-border bg-cream-light/50 peer-checked:border-choco-dark peer-checked:bg-cream-light transition-all">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                      Inclusa (Grátis)
+                    </span>
+                    <div class="w-5 h-5 rounded-full border-2 border-choco-warm/40 peer-checked:border-choco-dark flex items-center justify-center">
+                      <div class="w-2.5 h-2.5 rounded-full bg-choco-dark opacity-0 transition-opacity" id="dot-padrao"></div>
+                    </div>
+                  </div>
+                  <h4 class="font-bold text-choco-dark text-base mb-1">Embalagem Padrão</h4>
+                  <p class="text-xs text-choco-warm/85 leading-relaxed">
+                    Saquinho individual, adesivo da marca BAWKIEE e caixa de transporte.
+                  </p>
+                </div>
+              </label>
+
+              <!-- Opção Personalizada -->
+              <label class="cursor-pointer relative block">
+                <input type="radio" name="packaging" value="personalizada" onchange="setPackaging('personalizada')" class="peer sr-only" />
+                <div class="h-full p-5 rounded-2xl border-2 border-cream-border bg-cream-light/50 peer-checked:border-caramel-dark peer-checked:bg-caramel/5 transition-all">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-caramel/20 text-caramel-dark">
+                      + R$ 1,00 / unid.
+                    </span>
+                    <div class="w-5 h-5 rounded-full border-2 border-choco-warm/40 flex items-center justify-center">
+                      <div class="w-2.5 h-2.5 rounded-full bg-caramel-dark opacity-0 transition-opacity" id="dot-personalizada"></div>
+                    </div>
+                  </div>
+                  <h4 class="font-bold text-choco-dark text-base mb-1">Com Personalização</h4>
+                  <p class="text-xs text-choco-warm/85 leading-relaxed">
+                    Embalagem padrão + <strong>tag personalizada ou fita de cetim</strong> (+ R$ 1,00 por unidade).
+                  </p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Resumo Financeiro & Validação de Pedido Mínimo -->
+        <div class="lg:col-span-5 lg:sticky lg:top-24">
+          <div class="bg-choco-dark text-cream-light rounded-3xl p-6 sm:p-8 shadow-2xl shadow-choco-dark/20">
+            <div class="flex items-center justify-between pb-4 border-b border-white/15">
+              <div>
+                <span class="text-[11px] uppercase tracking-[0.2em] text-caramel-light font-semibold block">BAWKIEE</span>
+                <h3 class="font-serif text-2xl font-bold text-white">Resumo do Orçamento</h3>
+              </div>
+              <span id="total-units-badge" class="px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-cream-light">
+                0 unidades
+              </span>
+            </div>
+
+            <!-- Indicadores de Pedido Mínimo em Tempo Real -->
+            <div id="minimum-validation-box" class="my-5 space-y-3">
+              <!-- Preenchido via JS -->
+            </div>
+
+            <!-- Lista de Itens Selecionados -->
+            <div class="py-4 border-t border-white/15">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-cream-light/70 mb-3">Itens Selecionados</h4>
+              <div id="summary-items-list" class="space-y-2.5 text-sm max-h-56 overflow-y-auto pr-1">
+                <p class="text-cream-light/60 text-xs italic">Nenhum mini brownie adicionado ainda. Escolha os sabores ao lado.</p>
+              </div>
+            </div>
+
+            <!-- Totais Financeiros -->
+            <div class="pt-4 border-t border-white/15 space-y-2.5 text-sm">
+              <div class="flex justify-between text-cream-light/85">
+                <span>Subtotal Mini Brownies</span>
+                <span id="summary-subtotal" class="font-semibold">R$ 0,00</span>
+              </div>
+
+              <div class="flex justify-between text-cream-light/85">
+                <span id="summary-packaging-label">Embalagem Padrão</span>
+                <span id="summary-packaging-cost" class="font-semibold text-emerald-300">Inclusa</span>
+              </div>
+
+              <div class="pt-3 border-t border-white/15 flex items-baseline justify-between">
+                <span class="text-base font-bold text-white">Valor Total Estimado</span>
+                <span id="summary-total" class="font-serif text-2xl sm:text-3xl font-bold text-caramel-light">R$ 0,00</span>
+              </div>
+
+              <!-- Destaque Sinal de 50% -->
+              <div class="mt-3 p-3.5 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-caramel-light block">Sinal de 50% (Reserva de data)</span>
+                  <span class="text-[11px] text-cream-light/75">Restante + frete Uber Moto no envio</span>
+                </div>
+                <span id="summary-deposit" class="font-serif text-lg font-bold text-white">R$ 0,00</span>
+              </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="mt-6 space-y-3">
+              <button type="button" onclick="copyOrderSummary()"
+                      class="w-full py-3.5 px-5 rounded-2xl bg-caramel hover:bg-caramel-dark text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copiar Resumo para Enviar no Direct (@bawkiee)</span>
+              </button>
+
+              <a href="https://instagram.com/bawkiee" target="_blank" rel="noopener noreferrer"
+                 class="w-full py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-cream-light font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 border border-white/15">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span>Abrir Instagram @bawkiee</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 4: Embalagem, Personalização e Condições de Encomenda -->
+  <section id="condicoes" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      <span class="text-xs font-bold uppercase tracking-[0.22em] text-caramel-dark block mb-3">
+        Informações Importantes
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-choco-dark mb-4">
+        Embalagem, Personalização & Condições
+      </h2>
+      <p class="text-sm sm:text-base text-choco-warm/85">
+        Tudo o que você precisa saber sobre acabamento, reserva de agenda e entrega dos seus mini brownies.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1: Embalagem Padrão -->
+      <div class="bg-white rounded-3xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-cream-soft text-choco-dark flex items-center justify-center mb-5">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+        </div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 mb-1">Já Inclusa</span>
+        <h3 class="font-serif text-xl font-bold text-choco-dark mb-2">Embalagem Padrão</h3>
+        <p class="text-sm text-choco-warm/85 leading-relaxed">
+          Todos os pedidos já acompanham <strong>saquinho individual</strong>, <strong>adesivo da marca</strong> e <strong>caixa de transporte</strong> sem custo adicional.
+        </p>
+      </div>
+
+      <!-- Card 2: Personalização Opcional -->
+      <div class="bg-white rounded-3xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-caramel/15 text-caramel-dark flex items-center justify-center mb-5">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+          </svg>
+        </div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-caramel-dark mb-1">+ R$ 1,00 / unidade</span>
+        <h3 class="font-serif text-xl font-bold text-choco-dark mb-2">Personalização Opcional</h3>
+        <p class="text-sm text-choco-warm/85 leading-relaxed">
+          Deixe sua lembrancinha ainda mais especial adicionando <strong>tag personalizada</strong> ou <strong>fita de cetim</strong> por apenas + R$ 1,00 por unidade.
+        </p>
+      </div>
+
+      <!-- Card 3: Reserva de Data -->
+      <div class="bg-white rounded-3xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-cream-soft text-choco-dark flex items-center justify-center mb-5">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-choco-warm/70 mb-1">Agendamento</span>
+        <h3 class="font-serif text-xl font-bold text-choco-dark mb-2">Reserva de Data</h3>
+        <p class="text-sm text-choco-warm/85 leading-relaxed">
+          A confirmação do pedido e reserva da data na agenda são realizadas mediante pagamento de <strong>sinal de 50% do valor total</strong>.
+        </p>
+      </div>
+
+      <!-- Card 4: Entrega -->
+      <div class="bg-white rounded-3xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-cream-soft text-choco-dark flex items-center justify-center mb-5">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-choco-warm/70 mb-1">Logística</span>
+        <h3 class="font-serif text-xl font-bold text-choco-dark mb-2">Entrega via Uber Moto</h3>
+        <p class="text-sm text-choco-warm/85 leading-relaxed">
+          Entrega realizada <strong>exclusivamente via Uber Moto</strong>, com taxa de entrega calculada conforme o endereço no dia do envio.
+        </p>
+      </div>
+    </div>
+
+    <!-- Faixa de Aviso de Valores -->
+    <div class="mt-8 p-4 sm:p-5 rounded-2xl bg-cream-soft border border-cream-border flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5 text-caramel-dark shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p class="text-xs sm:text-sm text-choco-warm font-medium">
+          <strong>Observação:</strong> Valores sujeitos a alteração sem aviso prévio.
+        </p>
+      </div>
+      <a href="https://instagram.com/bawkiee" target="_blank" rel="noopener noreferrer"
+         class="text-xs sm:text-sm font-bold text-caramel-dark hover:underline">
+        Dúvidas? Fale no Direct @bawkiee →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-choco-dark text-cream-light pt-14 pb-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10 text-center md:text-left">
+        <div>
+          <span class="font-serif text-3xl font-bold tracking-[0.2em] text-white block">BAWKIEE</span>
+          <span class="text-xs uppercase tracking-[0.22em] text-caramel-light mt-1 block">
+            Confeitaria Artesanal • Mini Brownies
+          </span>
+        </div>
+
+        <div class="flex flex-col items-center md:items-end gap-2">
+          <p class="text-sm text-cream-light/85">
+            Faça sua encomenda pelo Direct no Instagram:
+          </p>
+          <a href="https://instagram.com/bawkiee" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-caramel hover:bg-caramel-dark text-white font-bold text-sm transition-all shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>@bawkiee</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-light/60 text-center sm:text-left">
+        <p>© <span id="current-year"></span> BAWKIEE Confeitaria Artesanal. Todos os direitos reservados.</p>
+        <p>Valores sujeitos a alteração sem aviso prévio.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica Interativa da Aplicação -->
+  <script>
+    // Dados oficiais do cardápio BAWKIEE conforme PDF
+    const FLAVORS = [
+      {
+        id: 'tradicional',
+        name: 'Tradicional',
+        description: 'Massa pura úmida e chocolatuda',
+        prices: { '4x4': 5.50, '5x5': 7.50 },
+        badge: 'Clássico',
+        gradient: 'from-[#2C1A12] via-[#4A2E22] to-[#3A2218]',
+        accentColor: '#C88A55',
+        fillingColor: '#3B2217'
+      },
+      {
+        id: 'chocolate-gourmet',
+        name: 'Chocolate Gourmet',
+        description: 'Recheado com brigadeiro cremoso',
+        prices: { '4x4': 7.50, '5x5': 10.50 },
+        badge: 'Mais Pedido',
+        gradient: 'from-[#24130C] via-[#3E2419] to-[#593525]',
+        accentColor: '#E2A871',
+        fillingColor: '#24130C'
+      },
+      {
+        id: 'leite-ninho',
+        name: 'Leite Ninho',
+        description: 'Recheado com creme de Ninho',
+        prices: { '4x4': 7.50, '5x5': 10.50 },
+        badge: 'Cremoso',
+        gradient: 'from-[#4A2E22] via-[#6E4836] to-[#C88A55]',
+        accentColor: '#FAF5F0',
+        fillingColor: '#F3EAE0'
+      },
+      {
+        id: 'maracuja',
+        name: 'Maracujá',
+        description: 'Recheado com redução natural da fruta',
+        prices: { '4x4': 7.50, '5x5': 10.50 },
+        badge: 'Frutado',
+        gradient: 'from-[#3B2217] via-[#6B4433] to-[#D99B26]',
+        accentColor: '#F5C451',
+        fillingColor: '#EAB338'
+      }
+    ];
+
+    const MIN_QUANTITIES = {
+      '4x4': 50,
+      '5x5': 25
+    };
+
+    const PERSONALIZATION_COST_PER_UNIT = 1.00;
+
+    // Estado da aplicação
+    const state = {
+      activeSize: '4x4',
+      packaging: 'padrao', // 'padrao' ou 'personalizada'
+      quantities: {
+        '4x4': {
+          'tradicional': 0,
+          'chocolate-gourmet': 0,
+          'leite-ninho': 0,
+          'maracuja': 0
+        },
+        '5x5': {
+          'tradicional': 0,
+          'chocolate-gourmet': 0,
+          'leite-ninho': 0,
+          'maracuja': 0
+        }
+      }
+    };
+
+    // Formatação em Real Brasileiro (R$)
+    function formatBRL(value) {
+      return value.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
+    }
+
+    // Ilustração SVG personalizada por sabor
+    function getFlavorIllustrationSVG(flavor) {
+      return `
+        <svg class="w-28 h-24 drop-shadow-lg transition-transform duration-300 group-hover:scale-105" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="80" cy="102" rx="58" ry="9" fill="#FAF5F0" fill-opacity="0.22"/>
+          <!-- Base do Brownie -->
+          <path d="M36 48L80 30L124 48V86L80 104L36 86V48Z" fill="#2C1A12"/>
+          <path d="M36 48L80 66V104L36 86V48Z" fill="#24130C"/>
+          <path d="M124 48L80 66V104L124 86V48Z" fill="#4A2E22"/>
+          <!-- Camada Central de Recheio -->
+          <path d="M36 65L80 83L124 65V73L80 91L36 73V65Z" fill="${flavor.fillingColor}"/>
+          <!-- Topo -->
+          <path d="M36 48L80 30L124 48L80 66L36 48Z" fill="#5D3A29"/>
+          <!-- Cobertura / Detalhe do Sabor -->
+          <path d="M54 47C66 40 94 40 106 47C98 55 64 56 54 47Z" fill="${flavor.accentColor}"/>
+          <circle cx="72" cy="46" r="2" fill="#FFFFFF" fill-opacity="0.65"/>
+          <circle cx="91" cy="48" r="1.8" fill="#FFFFFF" fill-opacity="0.55"/>
+        </svg>
+      `;
+    }
+
+    // Renderiza os cards do catálogo na Seção 2
+    function renderCatalog() {
+      const grid = document.getElementById('catalog-grid');
+      if (!grid) return;
+
+      grid.innerHTML = FLAVORS.map(flavor => `
+        <article class="group bg-white rounded-3xl border border-cream-border overflow-hidden shadow-sm hover:shadow-xl hover:shadow-choco-dark/5 transition-all flex flex-col">
+          <!-- Arte Gourmet do Sabor -->
+          <div class="h-44 bg-gradient-to-br ${flavor.gradient} p-5 relative flex flex-col items-center justify-center">
+            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-white/90 text-choco-dark text-[11px] font-bold tracking-wide shadow-sm">
+              ${flavor.badge}
+            </span>
+            ${getFlavorIllustrationSVG(flavor)}
+          </div>
+
+          <!-- Conteúdo e Preços -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-choco-dark mb-1.5">${flavor.name}</h3>
+              <p class="text-xs sm:text-sm text-choco-warm/85 leading-relaxed mb-5">
+                ${flavor.description}
+              </p>
+            </div>
+
+            <div class="space-y-2.5 pt-4 border-t border-cream-border">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-choco-warm font-medium">4x4 cm <span class="text-[11px] text-choco-warm/65">(Festas)</span></span>
+                <span class="font-bold text-choco-dark">${formatBRL(flavor.prices['4x4'])}</span>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-choco-warm font-medium">5x5 cm <span class="text-[11px] text-choco-warm/65">(Lembrança)</span></span>
+                <span class="font-bold text-caramel-dark">${formatBRL(flavor.prices['5x5'])}</span>
+              </div>
+
+              <button type="button" onclick="quickAddFlavor('${flavor.id}')"
+                      class="mt-3 w-full py-2.5 px-4 rounded-xl bg-cream-light hover:bg-choco-dark text-choco-dark hover:text-cream-light border border-cream-border font-semibold text-xs transition-all cursor-pointer">
+                + Adicionar ao Simulador
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Atalho do catálogo para levar o usuário ao simulador e adicionar unidades
+    function quickAddFlavor(flavorId) {
+      const size = state.activeSize;
+      const step = size === '4x4' ? 10 : 5;
+      state.quantities[size][flavorId] += step;
+      renderSimulatorList();
+      updateSummary();
+
+      const simulatorEl = document.getElementById('simulador');
+      if (simulatorEl) {
+        simulatorEl.scrollIntoView({ behavior: 'smooth' });
+      }
+      const flavor = FLAVORS.find(f => f.id === flavorId);
+      showToast(`+${step} unid. de ${flavor.name} (${size} cm) adicionadas ao orçamento!`);
+    }
+
+    // Alterna aba ativa entre 4x4 cm e 5x5 cm
+    function switchActiveSize(size) {
+      state.activeSize = size;
+
+      const tab4 = document.getElementById('tab-4x4');
+      const tab5 = document.getElementById('tab-5x5');
+
+      if (size === '4x4') {
+        tab4.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-choco-dark text-cream-light shadow-sm';
+        tab5.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-choco-warm hover:text-choco-dark';
+      } else {
+        tab5.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-choco-dark text-cream-light shadow-sm';
+        tab4.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-choco-warm hover:text-choco-dark';
+      }
+
+      renderSimulatorList();
+    }
+
+    // Renderiza os controles de quantidade no simulador
+    function renderSimulatorList() {
+      const listEl = document.getElementById('simulator-flavors-list');
+      if (!listEl) return;
+
+      const size = state.activeSize;
+
+      listEl.innerHTML = FLAVORS.map(flavor => {
+        const qty = state.quantities[size][flavor.id];
+        const unitPrice = flavor.prices[size];
+
+        return `
+          <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <h4 class="font-bold text-choco-dark text-base">${flavor.name}</h4>
+                <span class="text-xs font-semibold text-caramel-dark bg-caramel/10 px-2.5 py-0.5 rounded-full">
+                  ${formatBRL(unitPrice)} / unid.
+                </span>
+              </div>
+              <p class="text-xs text-choco-warm/80 mt-0.5">${flavor.description}</p>
+            </div>
+
+            <div class="flex items-center justify-between sm:justify-end gap-3">
+              <div class="inline-flex items-center rounded-xl border border-cream-border bg-cream-light p-1">
+                <button type="button" aria-label="Diminuir ${flavor.name}"
+                        onclick="updateQuantity('${size}', '${flavor.id}', -5)"
+                        class="w-9 h-9 rounded-lg flex items-center justify-center text-choco-dark hover:bg-white font-bold text-base transition-colors cursor-pointer">
+                  −
+                </button>
+                <input type="number" min="0" step="1" value="${qty}"
+                       aria-label="Quantidade de ${flavor.name}"
+                       onchange="setDirectQuantity('${size}', '${flavor.id}', this.value)"
+                       class="w-14 text-center bg-transparent font-bold text-choco-dark text-sm focus:outline-none" />
+                <button type="button" aria-label="Aumentar ${flavor.name}"
+                        onclick="updateQuantity('${size}', '${flavor.id}', 5)"
+                        class="w-9 h-9 rounded-lg flex items-center justify-center text-choco-dark hover:bg-white font-bold text-base transition-colors cursor-pointer">
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateQuantity(size, flavorId, delta) {
+      const current = state.quantities[size][flavorId];
+      state.quantities[size][flavorId] = Math.max(0, current + delta);
+      renderSimulatorList();
+      updateSummary();
+    }
+
+    function setDirectQuantity(size, flavorId, rawValue) {
+      const parsed = parseInt(rawValue, 10);
+      state.quantities[size][flavorId] = isNaN(parsed) || parsed < 0 ? 0 : parsed;
+      renderSimulatorList();
+      updateSummary();
+    }
+
+    function setPackaging(type) {
+      state.packaging = type;
+      const dotPadrao = document.getElementById('dot-padrao');
+      const dotPers = document.getElementById('dot-personalizada');
+      if (dotPadrao && dotPers) {
+        dotPadrao.style.opacity = type === 'padrao' ? '1' : '0';
+        dotPers.style.opacity = type === 'personalizada' ? '1' : '0';
+      }
+      updateSummary();
+    }
+
+    // Completa o mínimo faltante no tamanho atual
+    function fillMinimumUniform() {
+      const size = state.activeSize;
+      const minRequired = MIN_QUANTITIES[size];
+      const currentTotal = Object.values(state.quantities[size]).reduce((acc, v) => acc + v, 0);
+
+      if (currentTotal >= minRequired) {
+        showToast(`O tamanho ${size} cm já atingiu o mínimo de ${minRequired} unidades!`);
+        return;
+      }
+
+      const missing = minRequired - currentTotal;
+      // Distribui no Tradicional ou no primeiro sabor que já tenha quantidade
+      const activeFlavor = FLAVORS.find(f => state.quantities[size][f.id] > 0) || FLAVORS[0];
+      state.quantities[size][activeFlavor.id] += missing;
+
+      renderSimulatorList();
+      updateSummary();
+      showToast(`Adicionadas +${missing} unid. de ${activeFlavor.name} (${size} cm) para atingir o mínimo.`);
+    }
+
+    function resetOrder() {
+      ['4x4', '5x5'].forEach(size => {
+        FLAVORS.forEach(f => {
+          state.quantities[size][f.id] = 0;
+        });
+      });
+      renderSimulatorList();
+      updateSummary();
+      showToast('Orçamento zerado.');
+    }
+
+    // Calcula todos os números e atualiza o painel de resumo
+    function calculateOrderData() {
+      let units4x4 = 0;
+      let units5x5 = 0;
+      let subtotal = 0;
+      const items = [];
+
+      ['4x4', '5x5'].forEach(size => {
+        FLAVORS.forEach(flavor => {
+          const qty = state.quantities[size][flavor.id];
+          if (qty > 0) {
+            const unitPrice = flavor.prices[size];
+            const lineTotal = qty * unitPrice;
+            subtotal += lineTotal;
+            if (size === '4x4') units4x4 += qty;
+            if (size === '5x5') units5x5 += qty;
+
+            items.push({
+              size,
+              flavorName: flavor.name,
+              qty,
+              unitPrice,
+              lineTotal
+            });
+          }
+        });
+      });
+
+      const totalUnits = units4x4 + units5x5;
+      const packagingCost = state.packaging === 'personalizada' ? totalUnits * PERSONALIZATION_COST_PER_UNIT : 0;
+      const grandTotal = subtotal + packagingCost;
+      const deposit50 = grandTotal * 0.5;
+
+      const valid4x4 = units4x4 === 0 || units4x4 >= MIN_QUANTITIES['4x4'];
+      const valid5x5 = units5x5 === 0 || units5x5 >= MIN_QUANTITIES['5x5'];
+
+      return {
+        items,
+        units4x4,
+        units5x5,
+        totalUnits,
+        subtotal,
+        packagingCost,
+        grandTotal,
+        deposit50,
+        valid4x4,
+        valid5x5
+      };
+    }
+
+    function updateSummary() {
+      const data = calculateOrderData();
+
+      // Badge de unidades totais
+      const badge = document.getElementById('total-units-badge');
+      badge.textContent = `${data.totalUnits} ${data.totalUnits === 1 ? 'unidade' : 'unidades'}`;
+
+      // Validação visual de pedido mínimo
+      const validationBox = document.getElementById('minimum-validation-box');
+      let validationHTML = '';
+
+      if (data.totalUnits === 0) {
+        validationHTML = `
+          <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs text-cream-light/80">
+            <strong>Pedidos mínimos:</strong> 50 unid. para 4x4 cm ou 25 unid. para 5x5 cm.
+          </div>
+        `;
+      } else {
+        if (data.units4x4 > 0) {
+          const pct4 = Math.min(100, Math.round((data.units4x4 / MIN_QUANTITIES['4x4']) * 100));
+          const isOk4 = data.units4x4 >= MIN_QUANTITIES['4x4'];
+          validationHTML += `
+            <div class="p-3.5 rounded-2xl ${isOk4 ? 'bg-emerald-500/15 border-emerald-400/30' : 'bg-amber-500/15 border-amber-400/30'} border">
+              <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
+                <span>Tamanho 4x4 cm: ${data.units4x4} / ${MIN_QUANTITIES['4x4']} unid.</span>
+                <span class="${isOk4 ? 'text-emerald-300' : 'text-amber-300'}">
+                  ${isOk4 ? '✓ Mínimo atingido' : `Faltam ${MIN_QUANTITIES['4x4'] - data.units4x4} unid.`}
+                </span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-black/30 overflow-hidden">
+                <div class="h-full ${isOk4 ? 'bg-emerald-400' : 'bg-amber-400'} transition-all duration-300" style="width: ${pct4}%"></div>
+              </div>
+            </div>
+          `;
+        }
+
+        if (data.units5x5 > 0) {
+          const pct5 = Math.min(100, Math.round((data.units5x5 / MIN_QUANTITIES['5x5']) * 100));
+          const isOk5 = data.units5x5 >= MIN_QUANTITIES['5x5'];
+          validationHTML += `
+            <div class="p-3.5 rounded-2xl ${isOk5 ? 'bg-emerald-500/15 border-emerald-400/30' : 'bg-amber-500/15 border-amber-400/30'} border">
+              <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
+                <span>Tamanho 5x5 cm: ${data.units5x5} / ${MIN_QUANTITIES['5x5']} unid.</span>
+                <span class="${isOk5 ? 'text-emerald-300' : 'text-amber-300'}">
+                  ${isOk5 ? '✓ Mínimo atingido' : `Faltam ${MIN_QUANTITIES['5x5'] - data.units5x5} unid.`}
+                </span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-black/30 overflow-hidden">
+                <div class="h-full ${isOk5 ? 'bg-emerald-400' : 'bg-amber-400'} transition-all duration-300" style="width: ${pct5}%"></div>
+              </div>
+            </div>
+          `;
+        }
+      }
+      validationBox.innerHTML = validationHTML;
+
+      // Lista de itens
+      const itemsList = document.getElementById('summary-items-list');
+      if (data.items.length === 0) {
+        itemsList.innerHTML = `<p class="text-cream-light/60 text-xs italic">Nenhum mini brownie adicionado ainda. Escolha os sabores ao lado.</p>`;
+      } else {
+        itemsList.innerHTML = data.items.map(item => `
+          <div class="flex items-center justify-between gap-2 text-xs sm:text-sm bg-white/5 px-3 py-2 rounded-xl">
+            <div>
+              <span class="font-bold text-white">${item.qty}x</span>
+              <span class="text-cream-light/95">${item.flavorName}</span>
+              <span class="text-[11px] text-caramel-light font-semibold ml-1">(${item.size} cm)</span>
+            </div>
+            <span class="font-semibold text-white shrink-0">${formatBRL(item.lineTotal)}</span>
+          </div>
+        `).join('');
+      }
+
+      // Valores financeiros
+      document.getElementById('summary-subtotal').textContent = formatBRL(data.subtotal);
+
+      const pkgLabel = document.getElementById('summary-packaging-label');
+      const pkgCost = document.getElementById('summary-packaging-cost');
+
+      if (state.packaging === 'personalizada') {
+        pkgLabel.textContent = `Personalização (${data.totalUnits}x R$ 1,00)`;
+        pkgCost.textContent = formatBRL(data.packagingCost);
+        pkgCost.className = 'font-semibold text-caramel-light';
+      } else {
+        pkgLabel.textContent = 'Embalagem Padrão';
+        pkgCost.textContent = 'Inclusa';
+        pkgCost.className = 'font-semibold text-emerald-300';
+      }
+
+      document.getElementById('summary-total').textContent = formatBRL(data.grandTotal);
+      document.getElementById('summary-deposit').textContent = formatBRL(data.deposit50);
+    }
+
+    // Gera e copia a mensagem formatada para o Direct do Instagram @bawkiee
+    function copyOrderSummary() {
+      const data = calculateOrderData();
+
+      if (data.totalUnits === 0) {
+        showToast('Adicione pelo menos um sabor antes de copiar o orçamento!', 'warning');
+        return;
+      }
+
+      const lines = [
+        'Olá, @bawkiee! Gostaria de fazer um orçamento de Mini Brownies Artesanais:',
+        '',
+        '*ITENS DO PEDIDO:*'
+      ];
+
+      data.items.forEach(item => {
+        lines.push(`• ${item.qty}x Mini Brownie ${item.flavorName} (${item.size} cm) — ${formatBRL(item.lineTotal)}`);
+      });
+
+      lines.push('');
+      lines.push(`*Total de unidades:* ${data.totalUnits} unid.`);
+      lines.push(
+        state.packaging === 'personalizada'
+          ? `*Embalagem:* Com personalização (tag personalizada ou fita de cetim) — +${formatBRL(data.packagingCost)}`
+          : `*Embalagem:* Padrão inclusa (saquinho individual, adesivo da marca e caixa de transporte)`
+      );
+      lines.push(`*Valor Total Estimado:* ${formatBRL(data.grandTotal)}`);
+      lines.push(`*Sinal de 50% (reserva de data):* ${formatBRL(data.deposit50)}`);
+
+      if (!data.valid4x4 || !data.valid5x5) {
+        lines.push('');
+        lines.push('_(Obs.: Ainda ajustando quantidades para o pedido mínimo)_');
+      }
+
+      lines.push('');
+      lines.push('Poderia verificar a disponibilidade de data e o valor da entrega via Uber Moto?');
+
+      const textToCopy = lines.join('\n');
+
+      // Cópia compatível com ambientes sandbox/iframe usando execCommand
+      const textarea = document.createElement('textarea');
+      textarea.value = textToCopy;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      try {
+        document.execCommand('copy');
+        if (!data.valid4x4 || !data.valid5x5) {
+          showToast('Resumo copiado! Lembre-se de conferir o pedido mínimo (50 unid. para 4x4 cm ou 25 unid. para 5x5 cm).', 'warning');
+        } else {
+          showToast('Resumo copiado com sucesso! Agora é só colar no Direct do @bawkiee.');
+        }
+      } catch (err) {
+        showToast('Não foi possível copiar automaticamente. Tente selecionar o resumo.', 'warning');
+      } finally {
+        document.body.removeChild(textarea);
+      }
+    }
+
+    // Notificação elegante (Toast)
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+
+      const toast = document.createElement('div');
+      const bgClass = type === 'warning'
+        ? 'bg-amber-900 text-amber-50 border-amber-500/40'
+        : 'bg-choco-dark text-cream-light border-caramel/40';
+
+      toast.className = `${bgClass} border px-4 py-3.5 rounded-2xl shadow-xl text-xs sm:text-sm font-medium flex items-center gap-3 pointer-events-auto transition-all duration-300 transform translate-y-2 opacity-0`;
+      toast.innerHTML = `
+        <span class="w-2 h-2 rounded-full ${type === 'warning' ? 'bg-amber-400' : 'bg-caramel-light'} shrink-0"></span>
+        <span>${message}</span>
+      `;
+
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-2', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 4200);
+    }
+
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      const dotPadrao = document.getElementById('dot-padrao');
+      if (dotPadrao) dotPadrao.style.opacity = '1';
+
+      renderCatalog();
+      renderSimulatorList();
+      updateSummary();
+    });
+  </script>
+</body>
+</html>
